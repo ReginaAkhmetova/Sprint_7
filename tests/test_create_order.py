@@ -20,7 +20,7 @@ class TestCreateOrder:
     )
     def test_create_order(self, order_data):
         headers = {"Content-Type": "application/json"}
-        response = requests.post(Urls.ORDERS, json=order_data, headers=headers)
+        response = requests.post(f"{Urls.BASE}{Urls.ORDERS}", json=order_data, headers=headers)
         assert response.status_code == 201
         res = response.json()
         assert "track" in res and isinstance(res["track"], int)
@@ -28,7 +28,7 @@ class TestCreateOrder:
         # дополнительно проверим, что этот заказ действительно существует - для этого
         # попытаемся его получить по его трек-номеру
         track_number = res["track"]
-        response = requests.get(f"{Urls.ORDER_GET_BY_TRACK}?t={track_number}")
+        response = requests.get(f"{Urls.BASE}{Urls.ORDER_GET_BY_TRACK}?t={track_number}")
         res = response.json()
         assert (
             response.status_code == 200

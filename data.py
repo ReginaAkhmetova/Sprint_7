@@ -1,24 +1,8 @@
-class DataForAuth:
-    MY_LOGIN = "Buba"
-    MY_PASSWORD = "qwerty1234"
-    MY_FIRSTNAME = "Buka"
-    VALID_DATA = {
-        "login": MY_LOGIN,
-        "password": MY_PASSWORD,
-        "firstName": MY_FIRSTNAME,
-    }
-    AUTHDATA_VALID = {
-        "login": MY_LOGIN,
-        "password": MY_PASSWORD,
-    }
-    AUTHDATA_WITH_WRONG_LOGIN = {
-        "login": "Bubba",
-        "password": MY_PASSWORD,
-    }
-    AUTHDATA_WITH_WRONG_PASSWORD = {
-        "login": MY_LOGIN,
-        "password": "123456789",
-    }
+class DataMessage:
+    MES_ACCOUNT_NOT_FOUND = "Учетная запись не найдена"
+    MES_LOGIN_MISSED_DATA = "Недостаточно данных для входа"
+    MES_LOGIN_ALREADY_IN_USE = "Этот логин уже используется"
+    MES_CREATE_COURIER_MISSED_DATA = "Недостаточно данных для создания учетной записи"
 
 
 class DataOrders:
